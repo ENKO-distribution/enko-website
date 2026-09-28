@@ -183,7 +183,8 @@
     }
     function progress() {
       const top = track.getBoundingClientRect().top + scrollY, span = track.offsetHeight - stage.offsetHeight;
-      const p = span > 0 ? (scrollY - top) / span : 1; return Math.max(0, Math.min(1, p));
+      if (span < 40) return 0; /* hero is not pinned: keep the logo state */
+      const p = (scrollY - top) / span; return Math.max(0, Math.min(1, p));
     }
     function ease(p) { return p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2; }
     function apply() {

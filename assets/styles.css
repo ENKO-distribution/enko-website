@@ -81,7 +81,6 @@ html[data-theme="light"] .logo-b{display:block}
 
 /* ===== hero ===== */
 .hero-track{height:200vh}
-@media (max-width:720px){.hero-track{height:170vh}}
 .hero-stage{position:sticky;top:0;height:100svh;display:grid;grid-template-rows:auto 1fr auto;gap:10px;padding:calc(var(--head) + 14px) var(--gutter) 26px}
 .cap{color:var(--fg2);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0}
 .mosaic-box{position:relative;min-height:90px}
@@ -105,10 +104,10 @@ h1{margin:0 0 14px;font:800 clamp(24px,3.4vw,52px)/1.02 var(--display);letter-sp
 .counters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 24px;border-top:1px solid var(--line);padding-top:16px}
 .counters.row4{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px 32px;margin:36px 0 48px;max-width:1040px}
 @media (max-width:720px){.counters.row4{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 20px}}
-.counter{position:relative;display:grid;gap:6px;align-content:start}
+.counter{position:relative;display:grid;gap:14px;align-content:start}
 .counter b{font:800 clamp(26px,3vw,44px)/1 var(--display);letter-spacing:-.02em;white-space:nowrap;font-variant-numeric:tabular-nums}
 .counter span{font:500 11px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg2)}
-.marker{position:absolute;left:-6px;top:calc(clamp(26px,3vw,44px) + 2px);width:min(100%,170px);height:14px;pointer-events:none}
+.marker{position:absolute;left:-6px;top:calc(clamp(26px,3vw,44px) + 1px);width:min(100%,170px);height:10px;pointer-events:none}
 .marker path{fill:none;stroke:var(--marker);stroke-width:4;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420}
 .marker.draw path{transition:stroke-dashoffset .9s ease-out .35s;stroke-dashoffset:0}
 
@@ -264,6 +263,10 @@ ul.lines>li{background:var(--bg);padding:16px 0}
 .ig-grid div{aspect-ratio:1;background:var(--tile) center/cover no-repeat}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:32px 40px;border-top:1px solid var(--line);margin-top:64px;font-size:12px;color:var(--fg2)}
 .foot img{height:18px;width:auto}
+
+/* phones: hero copy can be taller than the screen, so the hero is not pinned there */
+@media (max-width:900px){.hero-stage{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
+@media (max-width:720px){.hero-track{height:auto}.hero-stage{position:relative;height:auto;min-height:100svh}.mosaic-box{min-height:130px}}
 
 /* ===== screenshot helper (debug only) ===== */
 html[data-shot] .hero-track{height:auto}
