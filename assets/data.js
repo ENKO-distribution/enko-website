@@ -6,7 +6,7 @@ ENKO.ARTISTS = [
   { id: 'kalush', name: 'Kalush Orchestra', img: 'assets/img/artists/kalush-orchestra.jpg', role: { en: 'Distribution', uk: 'Дистрибуція' }, note: { en: 'Eurovision 2022 winners', uk: 'Переможці Євробачення 2022' } },
   { id: 'alyona', name: 'alyona alyona', img: 'assets/img/artists/alyona-alyona.jpg', role: { en: 'Distribution & publishing', uk: 'Дистрибуція і паблішинг' }, note: { en: 'Eurovision 2024 top-3', uk: 'Топ-3 Євробачення 2024' } },
   { id: 'shugar', name: 'Шугар', img: 'assets/img/artists/shugar.jpg', role: { en: 'Promo, distribution & publishing', uk: 'Промо, дистрибуція і паблішинг' }, note: { en: '3 platinum hits', uk: '3 платинові хіти' } },
-  { id: 'mamarika', name: 'MamaRika', img: 'assets/img/artists/mamarika.jpg', role: { en: 'Promo & distribution', uk: 'Промо і дистрибуція' }, note: { en: 'Platinum hit «Зв\'язок»', uk: 'Платиновий хіт «Зв\'язок»' } },
+  { id: 'mamarika', name: 'MamaRika', img: 'assets/img/artists/mamarika.jpg', role: { en: 'Promo & distribution', uk: 'Промо і дистрибуція' }, note: { en: 'Platinum hit «Звʼязок»', uk: 'Платиновий хіт «Звʼязок»' } },
   { id: 'kola', name: 'KOLA', img: 'assets/img/artists/kola.jpg', role: { en: 'Distribution', uk: 'Дистрибуція' }, note: { en: 'Spotify EQUAL ambassador', uk: 'Амбасадорка Spotify EQUAL' } },
   { id: 'aira', name: 'AIRA', img: 'assets/img/artists/aira.jpg', role: { en: 'Distribution & promo', uk: 'Дистрибуція і промо' }, note: { en: '', uk: '' } },
   { id: 'lemka', name: 'LÉMKA', img: 'assets/img/artists/lemka.jpg', role: { en: 'Distribution & promo', uk: 'Дистрибуція і промо' }, note: { en: '', uk: '' } }
@@ -37,21 +37,21 @@ ENKO.CASES = [
   { id: 'carpetman', img: 'assets/img/photos/carpetman-hood.jpg', name: 'Carpetman', tag: { en: 'Full management · since first release', uk: 'Повний менеджмент · з першого релізу' },
     headline: { en: 'From zero to 17M+ monthly listeners', uk: 'Від нуля до 17M+ слухачів на місяць' },
     stats: [ { n: '17M+', l: { en: 'Spotify monthly listeners', uk: 'слухачів на місяць у Spotify' } }, { n: '500M', l: { en: 'video views', uk: 'переглядів відео' } }, { n: '#11', l: { en: 'Shazam Global, «Feel So Cold»', uk: 'Shazam Global, «Feel So Cold»' } } ],
-    text: { en: 'The talent is all his: he writes and produces every track. We handled strategic marketing, pitching and distribution. Organic growth from under 5M to 17M+ monthly listeners in six months, a US tour with Hippie Sabotage and the Music Moves Europe Award 2026.', uk: 'Талант повністю його: пише і продюсує кожен трек сам. Ми взяли на себе стратегічний маркетинг, пітчинг і дистрибуцію. Органічний ріст з менш ніж 5M до 17M+ слухачів на місяць за пів року, тур США з Hippie Sabotage і Music Moves Europe Award 2026.' },
+    text: { en: 'The talent is all his: he writes and produces every track. We handled strategic marketing, pitching and distribution. Organic growth from under 5M to 17M+ monthly listeners in six months, a US tour with Hippie Sabotage and the Music Moves Europe Award 2026.', uk: 'Талант цілком його: він сам пише і продюсує кожен трек. Ми взяли на себе стратегічний маркетинг, пітчинг і дистрибуцію. Органічне зростання з менш ніж 5M до 17M+ слухачів на місяць за пів року, тур у США з Hippie Sabotage і Music Moves Europe Award 2026.' },
     tbc: { en: '[Confirm: 17M+ (site, 09.2026) vs 2.1M (press release, 08.2026)]', uk: '[Підтвердити: 17M+ (сайт, 09.2026) чи 2.1M (прес-реліз, 08.2026)]' } },
   { id: 'fiinka', img: '', name: 'FIЇNKA', tag: { en: 'Distribution & marketing · since 2022', uk: 'Дистрибуція і маркетинг · з 2022' },
     headline: { en: 'From 315K to 9.9M streams a year', uk: 'Від 315K до 9.9M стрімів на рік' },
-    stats: [ { n: '31×', l: { en: 'growth in yearly Spotify streams, 2022 → 2025', uk: 'ріст річних стрімів у Spotify, 2022 → 2025' } }, { n: '20.4M', l: { en: 'Spotify streams to date', uk: 'стрімів у Spotify загалом' } }, { n: '2', l: { en: 'platinum hits: «Грушка», «Афини»', uk: 'платинові хіти: «Грушка», «Афини»' } } ],
-    text: { en: 'We spotted the potential early and invested in growth: release plan, editorial pitching and content strategy turned an ethno-pop voice into a platinum catalogue.', uk: 'Ми побачили потенціал рано і вклалися в ріст: релізний план, редакторський пітчинг і контент-стратегія перетворили етно-поп голос на платиновий каталог.' },
+    stats: [ { n: '31×', l: { en: 'growth in yearly Spotify streams, 2022 → 2025', uk: 'зростання річних стрімів у Spotify, 2022 → 2025' } }, { n: '20.4M', l: { en: 'Spotify streams to date', uk: 'стрімів у Spotify загалом' } }, { n: '2', l: { en: 'platinum hits: «Грушка», «Афини»', uk: 'платинові хіти: «Грушка», «Афини»' } } ],
+    text: { en: 'We spotted the potential early and invested in growth: release plan, editorial pitching and content strategy turned an ethno-pop voice into a platinum catalogue.', uk: 'Ми побачили потенціал рано та інвестували в розвиток: релізний план, редакторський пітчинг і контент-стратегія перетворили етнопоп-голос на платиновий каталог.' },
     tbc: { en: '[Figures from ENKO deck, 07.2026: confirm]', uk: '[Цифри з презентації ENKO, 07.2026: підтвердити]' } },
   { id: 'liulenov', img: '', name: 'IVAN LIULENOV', tag: { en: 'Distribution & marketing · since 2023', uk: 'Дистрибуція і маркетинг · з 2023' },
     headline: { en: 'From 1.4M to 14M streams a year', uk: 'Від 1.4M до 14M стрімів на рік' },
-    stats: [ { n: '10×', l: { en: 'growth in yearly Spotify streams, 2022 → 2025', uk: 'ріст річних стрімів у Spotify, 2022 → 2025' } }, { n: '228M', l: { en: 'streams, «Шовковиця» (platinum)', uk: 'стрімів, «Шовковиця» (платина)' } }, { n: '2023', l: { en: 'collaboration started', uk: 'початок співпраці' } } ],
-    text: { en: 'A catalogue that used to sit still. Release cadence, TikTok sound seeding and playlist work multiplied yearly streams tenfold in two years.', uk: 'Каталог, який стояв на місці. Релізний темп, засів звуків у TikTok і плейлистна робота збільшили річні стріми в десять разів за два роки.' },
+    stats: [ { n: '10×', l: { en: 'growth in yearly Spotify streams, 2022 → 2025', uk: 'зростання річних стрімів у Spotify, 2022 → 2025' } }, { n: '228M', l: { en: 'streams, «Шовковиця» (platinum)', uk: 'стрімів, «Шовковиця» (платина)' } }, { n: '2023', l: { en: 'collaboration started', uk: 'початок співпраці' } } ],
+    text: { en: 'A catalogue that used to sit still. Release cadence, TikTok sound seeding and playlist work multiplied yearly streams tenfold in two years.', uk: 'Каталог, який стояв на місці. Релізний темп, посів звуків у TikTok і робота з плейлистами збільшили річні стріми вдесятеро за два роки.' },
     tbc: { en: '[Figures from ENKO deck, 07.2026: confirm]', uk: '[Цифри з презентації ENKO, 07.2026: підтвердити]' } },
   { id: 'kola', img: 'assets/img/artists/kola.jpg', name: 'KOLA', tag: { en: 'Distribution · since 2022', uk: 'Дистрибуція · з 2022' },
     headline: { en: 'From 90K to 94M streams a year', uk: 'Від 90K до 94M стрімів на рік' },
-    stats: [ { n: '1000×', l: { en: 'growth in yearly Spotify streams, 2021 → 2025', uk: 'ріст річних стрімів у Spotify, 2021 → 2025' } }, { n: '106M', l: { en: 'Spotify streams to date', uk: 'стрімів у Spotify загалом' } }, { n: 'EQUAL', l: { en: 'Spotify EQUAL ambassador', uk: 'амбасадорка Spotify EQUAL' } } ],
+    stats: [ { n: '1000×', l: { en: 'growth in yearly Spotify streams, 2021 → 2025', uk: 'зростання річних стрімів у Spotify, 2021 → 2025' } }, { n: '106M', l: { en: 'Spotify streams to date', uk: 'стрімів у Spotify загалом' } }, { n: 'EQUAL', l: { en: 'Spotify EQUAL ambassador', uk: 'амбасадорка Spotify EQUAL' } } ],
     text: { en: 'Six platinum and gold hits, a Spotify EQUAL campaign and consistent editorial support: the fastest-growing catalogue in the roster.', uk: 'Шість платинових і золотих хітів, кампанія Spotify EQUAL і стабільна редакторська підтримка: каталог, що росте найшвидше в ростері.' },
     tbc: { en: '[Figures from ENKO deck, 07.2026: confirm]', uk: '[Цифри з презентації ENKO, 07.2026: підтвердити]' } }
 ];
@@ -65,12 +65,12 @@ ENKO.PARTNERS = [
   { name: 'Universal Music Group', img: 'assets/img/logos/umg-light.png', role: { en: 'distribution', uk: 'дистрибуція' } },
   { name: 'Sony Music Publishing', img: 'assets/img/logos/sony-mp.png', role: { en: 'publishing', uk: 'паблішинг' } },
   { name: 'Kobalt', img: 'assets/img/logos/kobalt.png', role: { en: 'publishing', uk: 'паблішинг' } },
-  { name: 'THE TEAM', img: 'assets/img/logos/the-team.png', role: { en: 'touring', uk: 'тури' } },
+  { name: 'THE TEAM', img: 'assets/img/logos/the-team.png', opaque: true, role: { en: 'touring', uk: 'тури' } },
   { name: 'LYRA', img: '', role: { en: 'marketing', uk: 'маркетинг' }, url: 'https://lyra.promo' }
 ];
 
 ENKO.TEAM = [
-  { name: 'Ivan Klymenko', role: { en: 'Co-founder, producer', uk: 'Співзасновник, продюсер' }, weight: { en: 'Producer of «Stefania» and «Teresa & Maria», 300+ tracks, Recording Academy voting member', uk: 'Продюсер «Stefania» і «Teresa & Maria», 300+ треків, член Recording Academy з правом голосу' } },
+  { name: { en: 'Ivan Klymenko', uk: 'Іван Клименко' }, role: { en: 'Co-founder, producer', uk: 'Співзасновник, продюсер' }, weight: { en: 'Producer of «Stefania» and «Teresa & Maria», 300+ tracks, Recording Academy voting member', uk: 'Продюсер «Stefania» і «Teresa & Maria», 300+ треків, член Recording Academy з правом голосу' } },
   { name: '[Name TBC]', role: { en: 'Co-founder, CEO', uk: 'Співзасновниця, CEO' }, weight: { en: '[Weight TBC: one line with a number]', uk: '[Вага TBC: один рядок з цифрою]' } },
   { name: '[Name TBC]', role: { en: 'Co-founder', uk: 'Співзасновник' }, weight: { en: '[Weight TBC]', uk: '[Вага TBC]' } },
   { name: '[Name TBC]', role: { en: 'Head of Distribution', uk: 'Керівник дистрибуції' }, weight: { en: '[Weight TBC]', uk: '[Вага TBC]' } }
@@ -85,14 +85,14 @@ ENKO.STUDIOS = [
 ENKO.OPPORTUNITIES = [
   { title: { en: 'Catalog acquisition & evergreens', uk: 'Викуп каталогів і евергріни' }, text: { en: 'We acquire Ukrainian evergreen catalogs and grow them in three stages: acquisition, marketing test against KPIs, remarketing. Royalty revenue of the ENKO label doubled from 2023 to 2024.', uk: 'Купуємо українські евергрін-каталоги і розвиваємо їх у три етапи: викуп, маркетинговий тест за KPI, ремаркетинг. Роялті-дохід лейблу ENKO подвоївся з 2023 до 2024 року.' } },
   { title: { en: 'Studios', uk: 'Студії' }, text: { en: 'Creative residency in the Carpathians, a production studio in Los Angeles and ENKO Hub in Kyiv, a full complex in development.', uk: 'Креативна резиденція в Карпатах, продакшн-студія в Лос-Анджелесі та ENKO Hub у Києві, повний комплекс у розробці.' } },
-  { title: { en: 'Venture projects with artists', uk: 'Венчурні проєкти з артистами' }, text: { en: 'Carpetman was built from zero into an international act. The model is now a service: we co-invest, run the analytics and share the upside.', uk: 'Carpetman зібраний з нуля в міжнародний проєкт. Тепер ця модель є послугою: ми співінвестуємо, ведемо аналітику і ділимо результат.' } }
+  { title: { en: 'Venture projects with artists', uk: 'Венчурні проєкти з артистами' }, text: { en: 'Carpetman was built from zero into an international act. The model is now a service: we co-invest, run the analytics and share the upside.', uk: 'Carpetman виріс із нуля до міжнародного проєкту. Тепер ця модель доступна як послуга: ми співінвестуємо, ведемо аналітику і ділимо результат.' } }
 ];
 
 ENKO.FORMATS = [
-  { title: 'Brand Deals', text: { en: 'Artists for campaigns, launches and integrations. Two Eurovision entries and 1B+ views of reach.', uk: 'Артисти для кампаній, запусків та інтеграцій. Два Євробачення і 1B+ переглядів охоплення.' } },
-  { title: 'Sync Licensing', text: { en: 'Film, TV, trailers, advertising, games. One catalog, one contact, worldwide clearance through Sony Music Publishing and Kobalt.', uk: 'Кіно, ТБ, трейлери, реклама, ігри. Один каталог, один контакт, світове очищення прав через Sony Music Publishing і Kobalt.' } },
-  { title: 'Catalog Acquisition', text: { en: 'We buy or manage catalogs: transparent reporting, platform optimization, sync placements.', uk: 'Купуємо або керуємо каталогами: прозора звітність, оптимізація на платформах, sync-розміщення.' } },
-  { title: 'Sublabel Partnership', text: { en: 'Keep your brand and A&R. Use our distribution, marketing, legal and reporting infrastructure.', uk: 'Зберігаєте свій бренд і A&R. Користуєтесь нашою дистрибуцією, маркетингом, юридичною підтримкою і звітністю.' } }
+  { title: { en: 'Brand Deals', uk: 'Угоди з брендами' }, text: { en: 'Artists for campaigns, launches and integrations. Two Eurovision entries and 1B+ views of reach.', uk: 'Артисти для кампаній, запусків та інтеграцій. Два Євробачення і 1B+ переглядів охоплення.' } },
+  { title: { en: 'Sync Licensing', uk: 'Sync-ліцензування' }, text: { en: 'Film, TV, trailers, advertising, games. One catalog, one contact, worldwide clearance through Sony Music Publishing and Kobalt.', uk: 'Кіно, ТБ, трейлери, реклама, ігри. Один каталог, один контакт, світове очищення прав через Sony Music Publishing і Kobalt.' } },
+  { title: { en: 'Catalog Acquisition', uk: 'Викуп каталогів' }, text: { en: 'We buy or manage catalogs: transparent reporting, platform optimization, sync placements.', uk: 'Купуємо каталоги або керуємо ними: прозора звітність, оптимізація на платформах, sync-розміщення.' } },
+  { title: { en: 'Sublabel Partnership', uk: 'Партнерство для саблейблів' }, text: { en: 'Keep your brand and A&R. Use our distribution, marketing, legal and reporting infrastructure.', uk: 'Зберігаєте свій бренд і A&R. Користуєтесь нашою дистрибуцією, маркетингом, юридичною підтримкою і звітністю.' } }
 ];
 
 ENKO.TESTIMONIALS = [
@@ -104,7 +104,7 @@ ENKO.DEPTS = [
   { id: 'distribution', title: { en: 'Artists & Distribution', uk: 'Артисти і дистрибуція' }, email: 'distribution@enkomusic.com', desc: { en: 'Demos, releases, catalog', uk: 'Демо, релізи, каталог' } },
   { id: 'licensing', title: { en: 'Licensing & Sync', uk: 'Ліцензування і sync' }, email: 'licensing@enkomusic.com', desc: { en: 'Film, TV, ads, games [TBC email]', uk: 'Кіно, ТБ, реклама, ігри [TBC пошта]' } },
   { id: 'business', title: { en: 'Business & Investment', uk: 'Бізнес та інвестиції' }, email: 'business@enkomusic.com', desc: { en: 'Partnerships, catalogs, sublabels [TBC email]', uk: 'Партнерства, каталоги, саблейбли [TBC пошта]' } },
-  { id: 'press', title: { en: 'Press', uk: 'Преса' }, email: 'press@enkomusic.com', desc: { en: 'Interviews, media requests [TBC email]', uk: 'Інтерв\'ю, медіазапити [TBC пошта]' } }
+  { id: 'press', title: { en: 'Press', uk: 'Преса' }, email: 'press@enkomusic.com', desc: { en: 'Interviews, media requests [TBC email]', uk: 'Інтервʼю, медіазапити [TBC пошта]' } }
 ];
 
 ENKO.FAQ = {

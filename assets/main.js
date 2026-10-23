@@ -8,6 +8,7 @@
   const TOTAL = D.ROSTER_TOTAL || 170;
   const SP = new URLSearchParams(location.search);
   const FORCE_GRID = SP.get('hero') === 'grid';
+  const PRERENDER = SP.get('prerender') === '1';
   if (SP.get('shot')) { document.documentElement.setAttribute('data-shot', '1'); const y = parseInt(SP.get('y') || '0', 10); if (y) document.body.style.marginTop = (-y) + 'px'; }
 
   /* ---------- language ---------- */
@@ -29,6 +30,7 @@
     $$('[data-set-lang]').forEach((b) => b.classList.toggle('on', b.getAttribute('data-set-lang') === lang));
     $$('.ctrl[data-deck]').forEach((b) => b.setAttribute('aria-label', T(b.getAttribute('data-deck') === '-1' ? 'deck.prev' : 'deck.next')));
     renderAll();
+    if (PRERENDER) return;
     $$('.pop').forEach(splitPop);
     $$('.pop').forEach((el) => { if (isInView(el)) el.classList.add('in'); });
   }
@@ -62,22 +64,22 @@
   /* ---------- renders ---------- */
   function renderPartners() {
     const ul = $('#partners'); if (!ul) return;
-    ul.innerHTML = D.PARTNERS.map((p) => '<li>' + (p.img ? '<img src="' + p.img + '" alt="' + esc(p.name) + '" loading="lazy">' : '<a class="txt" href="' + p.url + '" target="_blank" rel="noopener">' + esc(p.name) + '</a>') + '<small>' + esc(L(p.role)) + '</small></li>').join('');
+    ul.innerHTML = D.PARTNERS.map((p) => '<li>' + (p.img ? '<img src="' + p.img + '" alt="' + esc(p.name) + '"' + (p.opaque ? ' class="opaque"' : '') + ' loading="lazy">' : '<a class="txt" href="' + p.url + '" target="_blank" rel="noopener">' + esc(p.name) + '</a>') + '<small>' + esc(L(p.role)) + '</small></li>').join('');
   }
   function renderRoster() {
     const ul = $('#roster'); if (!ul) return;
     ul.innerHTML = D.ARTISTS.map((a) => '<li><img src="' + a.img + '" alt="' + esc(a.name) + '" loading="lazy" width="480" height="600"><b>' + esc(a.name) + '</b><small>' + esc(L(a.role)) + (L(a.note) ? ' · ' + esc(L(a.note)) : '') + '</small></li>').join('');
-    const g = $('#rosterMosaic'); if (!g) return;
+    const g = $('#rosterMosaic'); if (!g || PRERENDER) return;
     let h = '';
     for (let i = 0; i < TOTAL; i++) {
       const a = artistAt(i);
-      h += '<div class="mt" tabindex="0" data-name="' + esc(a.name) + '" style="' + (a.real ? 'background-image:url(' + a.img + ')' : 'background-color:' + phColor(i)) + '"></div>';
+      h += '<div class="mt" data-name="' + esc(a.name) + '" style="' + (a.real ? 'background-image:url(' + a.img + ')' : 'background-color:' + phColor(i)) + '"></div>';
     }
     g.innerHTML = h;
   }
   function renderTeam() {
     const ul = $('#team'); if (!ul) return;
-    ul.innerHTML = D.TEAM.map((m) => '<li><div><b>' + esc(m.name) + '</b><small>' + esc(L(m.role)) + '</small></div><p>' + esc(L(m.weight)) + '</p></li>').join('');
+    ul.innerHTML = D.TEAM.map((m) => '<li><div><b>' + esc(L(m.name)) + '</b><small>' + esc(L(m.role)) + '</small></div><p>' + esc(L(m.weight)) + '</p></li>').join('');
   }
   const ICONS = {
     trophy: '<svg viewBox="0 0 24 24"><path d="M7 3h10v6a5 5 0 0 1-10 0V3z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3M9 21h6M12 14v7"/></svg>',
@@ -92,7 +94,7 @@
     const ul = $('#awards');
     if (ul) ul.innerHTML = D.AWARDS.map((a) => '<li>' + ICONS[a.icon] + '<span class="yr">' + esc(a.year) + '</span><div><b>' + esc(L(a.title)) + '</b><small>' + esc(L(a.who)) + '</small></div></li>').join('');
     const rail = $('#rail');
-    if (rail) rail.innerHTML = D.AWARDS.map((a, i) => '<div class="rail-item"><button type="button" class="rail-btn" style="--d:' + (i * 0.6) + 's" aria-label="' + esc(L(a.title)) + '">' + ICONS[a.icon] + '</button><div class="rail-card" role="tooltip"><span class="yr">' + esc(a.year) + '</span><b>' + esc(L(a.title)) + '</b><small>' + esc(L(a.who)) + '</small></div></div>').join('') + '<span class="rail-lbl">' + esc(T('awards.label')) + '</span>';
+    if (rail && !PRERENDER) rail.innerHTML = D.AWARDS.map((a, i) => '<div class="rail-item"><button type="button" class="rail-btn" style="--d:' + (i * 0.6) + 's" aria-label="' + esc(L(a.title)) + '">' + ICONS[a.icon] + '</button><div class="rail-card" role="tooltip"><span class="yr">' + esc(a.year) + '</span><b>' + esc(L(a.title)) + '</b><small>' + esc(L(a.who)) + '</small></div></div>').join('') + '<span class="rail-lbl">' + esc(T('awards.label')) + '</span>';
   }
   function renderNews() {
     const ul = $('#news'); if (!ul) return;
@@ -103,12 +105,12 @@
     ul.innerHTML = D.STUDIOS.map((s) => '<li><b>' + esc(L(s.name)) + '</b><span>' + esc(L(s.type)) + '</span><span class="st' + (/development|розроб/i.test(L(s.status)) ? ' dev' : '') + '">' + esc(L(s.status)) + '</span></li>').join('');
   }
   function renderCovers() {
-    const g = $('#covers'); if (!g) return;
+    const g = $('#covers'); if (!g || PRERENDER) return;
     let h = '';
     for (let i = 0; i < 48; i++) {
       const real = D.COVERS[i];
       const badge = i % 3 === 1 ? 'gold' : 'platinum';
-      h += '<div class="cv ' + badge + '" tabindex="0" data-badge="' + esc(T('badge.' + badge)) + '" style="' + (real ? 'background-image:url(' + real + ')' : 'background-color:' + phColor(i + 40)) + '"></div>';
+      h += '<div class="cv ' + badge + '" data-badge="' + esc(T('badge.' + badge)) + '" style="' + (real ? 'background-image:url(' + real + ')' : 'background-color:' + phColor(i + 40)) + '"></div>';
     }
     g.innerHTML = h;
   }
@@ -123,7 +125,7 @@
   }
   function renderBusiness() {
     const o = $('#opps'); if (o) o.innerHTML = D.OPPORTUNITIES.map((x) => '<div><h3>' + esc(L(x.title)) + '</h3><p>' + esc(L(x.text)) + '</p></div>').join('');
-    const f = $('#formats'); if (f) f.innerHTML = D.FORMATS.map((x) => '<div><h4>' + esc(x.title) + '</h4><p>' + esc(L(x.text)) + '</p></div>').join('');
+    const f = $('#formats'); if (f) f.innerHTML = D.FORMATS.map((x) => '<div><h4>' + esc(L(x.title)) + '</h4><p>' + esc(L(x.text)) + '</p></div>').join('');
     const q = $('#quotes'); if (q) q.innerHTML = D.TESTIMONIALS.map((x) => '<blockquote class="quote"><p>' + esc(L(x.quote)) + '</p><small>' + esc(x.who) + '</small></blockquote>').join('');
   }
   function renderContact() {
@@ -131,7 +133,7 @@
     const sel = $('#fDept');
     if (sel) { const v = sel.value; sel.innerHTML = D.DEPTS.map((d) => '<option value="' + d.id + '">' + esc(L(d.title)) + '</option>').join(''); if (v) sel.value = v; }
     const faq = $('#faq'); if (faq) faq.innerHTML = (D.FAQ[lang] || D.FAQ.en).map((f) => '<details><summary>' + esc(f.q) + '</summary><p>' + esc(f.a) + '</p></details>').join('');
-    const ig = $('#igGrid'); if (ig && !ig.children.length) { let h = ''; for (let i = 0; i < 6; i++) { const c = D.COVERS[i]; h += '<div style="' + (c ? 'background-image:url(' + c + ')' : 'background-color:' + phColor(i) + '') + '"></div>'; } ig.innerHTML = h; }
+    const ig = $('#igGrid'); if (ig && !PRERENDER && !ig.children.length) { let h = ''; for (let i = 0; i < 6; i++) { const c = D.COVERS[i]; h += '<div style="' + (c ? 'background-image:url(' + c + ')' : 'background-color:' + phColor(i) + '') + '"></div>'; } ig.innerHTML = h; }
   }
   function renderAll() { renderPartners(); renderRoster(); renderTeam(); renderAwards(); renderNews(); renderStudios(); renderCovers(); renderCases(); renderCaps(); renderBusiness(); renderContact(); }
 
@@ -236,6 +238,8 @@
         if (!en.isIntersecting) return;
         const id = en.target.id;
         $$('[data-go]').forEach((a) => a.classList.toggle('on', a.getAttribute('data-go') === id && a.closest('.nav, .nav-m') != null));
+        const bar = $('.nav-m'), act = bar && bar.querySelector('a.on');
+        if (act) bar.scrollTo({ left: act.offsetLeft - (bar.clientWidth - act.offsetWidth) / 2, behavior: RM ? 'auto' : 'smooth' });
         document.documentElement.setAttribute('data-theme', en.target.getAttribute('data-theme') || 'dark');
       });
     }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
@@ -245,7 +249,7 @@
   /* ---------- pixel wipe navigation ---------- */
   function nav() {
     const wipe = $('.wipe');
-    if (wipe) for (let i = 0; i < 24; i++) { const s = document.createElement('span'); s.style.transitionDelay = (0.04 + Math.random() * 0.16).toFixed(2) + 's'; wipe.appendChild(s); }
+    if (wipe && !wipe.children.length) for (let i = 0; i < 24; i++) { const s = document.createElement('span'); s.style.transitionDelay = (0.04 + Math.random() * 0.16).toFixed(2) + 's'; wipe.appendChild(s); }
     let busy = false;
     function goTo(id, dept) {
       const el = document.getElementById(id); if (!el) return;
@@ -298,6 +302,7 @@
 
   /* ---------- boot ---------- */
   translate();
+  if (PRERENDER) return;
   heroMosaic();
   observers();
   nav();
