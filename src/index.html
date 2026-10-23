@@ -13,12 +13,12 @@
 <meta property="og:description" content="170 artists, 19.5B+ streams, Eurovision 2022 winners. Distribution, publishing, marketing.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://enko-distribution.github.io/enko-website/assets/img/photos/eurovision-2022.jpg">
-<meta name="theme-color" content="#0a0a0a">
+<meta name="theme-color" content="#efece4">
 <link rel="icon" href="assets/img/logos/enko-black.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="assets/styles.css?v=20261023">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;900&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/styles.css?v=20261023b">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -64,6 +64,7 @@
 <body>
 
 <div class="wipe" aria-hidden="true"></div>
+<div class="orb" aria-hidden="true"></div>
 
 <header class="top" id="top">
   <a class="brand" href="#enko" data-go="enko" aria-label="ENKO">
@@ -88,7 +89,7 @@
 <main>
 
 <!-- ============ 01 ENKO ============ -->
-<section class="sec sec-enko" id="enko" data-theme="dark" aria-label="ENKO">
+<section class="sec sec-enko" id="enko" data-theme="paper" aria-label="ENKO">
   <div class="hero-track">
     <div class="hero-stage">
       <p class="cap mono" data-i18n="hero.caption">170 artists · one company · scroll to see them all</p>
@@ -135,6 +136,7 @@
     <p class="note tbc" data-i18n="artists.tbc">Placeholder tiles will be replaced with the real roster list and photos.</p>
   </div>
 
+  <div class="band" data-theme="ink">
   <div class="wrap block two">
     <div>
       <div class="sec-head"><span class="mono lbl">01.3 · <span data-i18n="team.label">Team</span></span><h2 class="pop" data-i18n="team.h2">People behind the numbers.</h2></div>
@@ -150,10 +152,12 @@
     <div class="sec-head"><span class="mono lbl">01.5 · <span data-i18n="news.label">In the news</span></span><h2 class="pop" data-i18n="news.h2">What the press says.</h2></div>
     <ul class="news lines" id="news"></ul>
   </div>
+  </div>
 </section>
 
 <!-- ============ 02 PUBLISHING ============ -->
-<section class="sec sec-pub" id="publishing" data-theme="light" aria-label="Publishing">
+<section class="sec sec-pub" id="publishing" data-theme="orange" aria-label="Publishing">
+  <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
   <div class="wrap">
     <div class="sec-head big"><span class="mono lbl">02 · <span data-i18n="pub.label">Publishing</span></span><h2 class="pop display" data-i18n="pub.h2">We write hits.</h2></div>
     <p class="lead narrow" data-i18n="pub.lead">ENKO producers and songwriters have written tracks with billions of streams. We create music in three studios and manage rights worldwide with Sony Music Publishing and Kobalt. Sync and licensing live in For Business.</p>
@@ -180,7 +184,7 @@
 </section>
 
 <!-- ============ 03 MARKETING ============ -->
-<section class="sec sec-mkt" id="marketing" data-theme="dark" aria-label="Marketing">
+<section class="sec sec-mkt" id="marketing" data-theme="ink" aria-label="Marketing">
   <div class="wrap">
     <div class="sec-head big"><span class="mono lbl">03 · <span data-i18n="mkt.label">Marketing</span></span><h2 class="pop display" data-i18n="mkt.h2">We make artists visible.</h2></div>
     <div class="lyra">
@@ -199,7 +203,7 @@
 </section>
 
 <!-- ============ 04 FOR BUSINESS ============ -->
-<section class="sec sec-biz" id="business" data-theme="light" aria-label="For Business">
+<section class="sec sec-biz" id="business" data-theme="sky" aria-label="For Business">
   <div class="wrap">
     <div class="sec-head big"><span class="mono lbl">04 · <span data-i18n="biz.label">For Business</span></span><h2 class="pop display" data-i18n="biz.h2">Music as an asset.</h2></div>
     <p class="lead narrow" data-i18n="biz.lead">ENKO is more than a label. We analyze the market, acquire and grow catalogs, build studios and launch venture projects with artists. Here is how to build business with us.</p>
@@ -214,7 +218,7 @@
 </section>
 
 <!-- ============ 05 GET IN TOUCH ============ -->
-<section class="sec sec-contact" id="contact" data-theme="dark" aria-label="Get in Touch">
+<section class="sec sec-contact" id="contact" data-theme="blue" aria-label="Get in Touch">
   <div class="wrap">
     <div class="sec-head big"><span class="mono lbl">05 · <span data-i18n="contact.label">Get in Touch</span></span><h2 class="pop display" data-i18n="contact.h2">Talk to us.</h2></div>
     <p class="lead narrow" data-i18n="contact.lead">Every request goes straight to the right department. Send over your project and we’ll tell you, straight, what we’d do with it.</p>
@@ -276,8 +280,8 @@
   <a href="#contact" data-go="contact"><span>05</span><b data-i18n="nav.contact">Get in Touch</b></a>
 </nav>
 
-<script src="assets/data.js?v=20261023" defer></script>
-<script src="assets/i18n.js?v=20261023" defer></script>
-<script src="assets/main.js?v=20261023" defer></script>
+<script src="assets/data.js?v=20261023b" defer></script>
+<script src="assets/i18n.js?v=20261023b" defer></script>
+<script src="assets/main.js?v=20261023b" defer></script>
 </body>
 </html>
