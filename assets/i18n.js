@@ -38,8 +38,7 @@ ENKO.I18N = {
     'form.note': 'This model opens your email client with the right address. In production the form routes to the department inbox.',
     'faq.title': 'FAQ', 'ig.title': 'Instagram', 'ig.text': 'Follow @enko_music for releases, covers and backstage.',
     'clocks.label': 'Now in', 'clock.kyiv': 'Kyiv', 'clock.warsaw': 'Warsaw', 'social.label': 'Follow',
-    'footer.loc': 'Kyiv · Warsaw', 'footer.copy': '© 2026 ENKO Music. All rights reserved.',
-    'ticker': 'Eurovision 2022 winners|19.5B+ streams|Music Moves Europe Award 2026|170 artists|Spotify EQUAL ×8|Offices in Kyiv and Warsaw|48 platinum & gold hits|Recording Academy members'
+    'footer.loc': 'Kyiv · Warsaw', 'footer.copy': '© 2026 ENKO Music. All rights reserved.'
   },
   uk: {
     'nav.enko': 'ENKO', 'nav.publishing': 'Паблішинг', 'nav.marketing': 'Маркетинг', 'nav.business': 'Для бізнесу', 'nav.contact': 'Контакти',
@@ -78,8 +77,7 @@ ENKO.I18N = {
     'form.note': 'У цій моделі кнопка відкриває поштовий клієнт із правильною адресою. У продакшні форма маршрутизує запит у скриньку департаменту.',
     'faq.title': 'Часті питання', 'ig.title': 'Instagram', 'ig.text': 'Підписуйтесь на @enko_music: релізи, обкладинки, бекстейдж.',
     'clocks.label': 'Зараз у', 'clock.kyiv': 'Києві', 'clock.warsaw': 'Варшаві', 'social.label': 'Соцмережі',
-    'footer.loc': 'Київ · Варшава', 'footer.copy': '© 2026 ENKO Music. Усі права захищені.',
-    'ticker': 'Переможці Євробачення 2022|19.5B+ стрімів|Music Moves Europe Award 2026|170 артистів|Spotify EQUAL ×8|Офіси в Києві та Варшаві|48 платинових і золотих хітів|Члени Recording Academy'
+    'footer.loc': 'Київ · Варшава', 'footer.copy': '© 2026 ENKO Music. Усі права захищені.'
   }
 };
 ENKO.LOGO_PATH = 'M324.089 60.6249L520.943 192.429V73.1426H484.933V129.595L288.079 0V237.591H324.089V60.6249ZM663.783 131.069V75.598H628.973V142.604V193.166L695.952 146.777L833.99 237.592H887.765L723.079 129.105L913.692 1.96441H860.157L663.783 131.069ZM178.849 114.13C170.687 71.6681 134.197 39.5147 90.2649 39.5147C40.3311 39.5147 0 80.7495 0 131.802C0 182.855 40.3311 224.089 90.2649 224.089V189.236C65.298 189.236 44.1722 172.546 36.7301 149.474H143.56H178.609C179.57 143.829 180.29 137.938 180.29 131.802C180.29 125.666 179.81 119.775 178.849 114.13ZM36.7301 114.13C43.9321 91.0582 65.0579 74.3679 90.2649 74.3679C115.472 74.3679 136.358 91.0582 143.8 114.13H36.7301ZM1069.74 39.5147C1019.8 39.5147 979.47 80.7495 979.47 131.802C979.47 182.855 1019.8 224.089 1069.74 224.089C1119.67 224.089 1160 182.855 1160 131.802C1160 80.7495 1119.43 39.5147 1069.74 39.5147ZM1069.74 189.236C1038.77 189.236 1013.56 163.465 1013.56 131.802C1013.56 100.14 1038.77 74.368 1069.74 74.368C1100.7 74.368 1125.91 100.14 1125.91 131.802C1125.91 163.465 1100.7 189.236 1069.74 189.236Z';

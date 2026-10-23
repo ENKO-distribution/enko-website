@@ -54,13 +54,7 @@
   function isInView(el) { const r = el.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }
 
   /* ---------- placeholders ---------- */
-  function phColor(i) {
-    /* mostly warm ink tiles with a few colour pixels sprinkled in (orange, sky, pink) */
-    if (i % 9 === 4) return '#ff5a1f';
-    if (i % 23 === 7) return '#9ad4ff';
-    if (i % 31 === 11) return '#ff4fa0';
-    const h = 26 + (i * 5) % 14, l = 9 + (i * 13) % 15; return 'hsl(' + h + ' 9% ' + l + '%)';
-  }
+  function phColor(i) { const h = 215 + (i * 7) % 40, l = 12 + (i * 13) % 16; return 'hsl(' + h + ' 14% ' + l + '%)'; }
   function artistAt(i) {
     const a = D.ARTISTS[i];
     if (a) return { name: a.name, img: a.img, real: true };
@@ -116,7 +110,7 @@
     for (let i = 0; i < 48; i++) {
       const real = D.COVERS[i];
       const badge = i % 3 === 1 ? 'gold' : 'platinum';
-      h += '<div class="cv ' + badge + '" data-badge="' + esc(T('badge.' + badge)) + '" style="' + (real ? 'background-image:url(' + real + ')' : 'background-color:hsl(' + (26 + (i * 5) % 14) + ' 9% ' + (9 + (i * 13) % 15) + '%)') + '"></div>';
+      h += '<div class="cv ' + badge + '" data-badge="' + esc(T('badge.' + badge)) + '" style="' + (real ? 'background-image:url(' + real + ')' : 'background-color:' + phColor(i + 40)) + '"></div>';
     }
     g.innerHTML = h;
   }
@@ -141,12 +135,7 @@
     const faq = $('#faq'); if (faq) faq.innerHTML = (D.FAQ[lang] || D.FAQ.en).map((f) => '<details><summary>' + esc(f.q) + '</summary><p>' + esc(f.a) + '</p></details>').join('');
     const ig = $('#igGrid'); if (ig && !PRERENDER && !ig.children.length) { let h = ''; for (let i = 0; i < 6; i++) { const c = D.COVERS[i]; h += '<div style="' + (c ? 'background-image:url(' + c + ')' : 'background-color:' + phColor(i) + '') + '"></div>'; } ig.innerHTML = h; }
   }
-  function renderTicker() {
-    const t = $('#ticker'); if (!t) return;
-    const items = T('ticker').split('|').map((x) => '<span>' + esc(x) + '</span>').join('');
-    t.innerHTML = items + items;
-  }
-  function renderAll() { renderPartners(); renderRoster(); renderTeam(); renderAwards(); renderNews(); renderStudios(); renderCovers(); renderCases(); renderCaps(); renderBusiness(); renderContact(); renderTicker(); }
+  function renderAll() { renderPartners(); renderRoster(); renderTeam(); renderAwards(); renderNews(); renderStudios(); renderCovers(); renderCases(); renderCaps(); renderBusiness(); renderContact(); }
 
   /* ---------- hero mosaic: logo made of faces -> grid ---------- */
   function heroMosaic() {
@@ -243,15 +232,15 @@
     }, { threshold: 0.2 });
     $$('.pop, .count, .marker').forEach((el) => io.observe(el));
     // scroll-spy + theme
-    const secs = $$('.sec, .band[data-theme]');
+    const secs = $$('.sec');
     const spy = new IntersectionObserver((entries) => {
       entries.forEach((en) => {
         if (!en.isIntersecting) return;
-        const sec = en.target.closest('.sec'), id = sec ? sec.id : en.target.id;
+        const id = en.target.id;
         $$('[data-go]').forEach((a) => a.classList.toggle('on', a.getAttribute('data-go') === id && a.closest('.nav, .nav-m') != null));
         const bar = $('.nav-m'), act = bar && bar.querySelector('a.on');
         if (act) bar.scrollTo({ left: act.offsetLeft - (bar.clientWidth - act.offsetWidth) / 2, behavior: RM ? 'auto' : 'smooth' });
-        document.documentElement.setAttribute('data-theme', en.target.getAttribute('data-theme') || 'paper');
+        document.documentElement.setAttribute('data-theme', en.target.getAttribute('data-theme') || 'dark');
       });
     }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
     secs.forEach((s) => spy.observe(s));
@@ -266,23 +255,12 @@
       const el = document.getElementById(id); if (!el) return;
       if (dept) { const sel = $('#fDept'); if (sel) sel.value = dept; }
       if (RM || !wipe || busy) { el.scrollIntoView({ behavior: RM ? 'auto' : 'smooth' }); return; }
-      const bg = getComputedStyle(el).getPropertyValue('--bg').trim(); if (bg) wipe.style.setProperty('--wipe', bg);
       busy = true; wipe.classList.add('on');
       setTimeout(() => { el.scrollIntoView({ behavior: 'auto' }); wipe.classList.add('out'); }, 360);
       setTimeout(() => { wipe.classList.remove('on', 'out'); busy = false; }, 900);
       history.replaceState(null, '', '#' + id);
     }
     $$('[data-go]').forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); goTo(a.getAttribute('data-go'), a.getAttribute('data-dept')); }));
-  }
-
-  /* ---------- pointer orb (runrobrun-style, desktop only) ---------- */
-  function orb() {
-    const o = $('.orb'); if (!o || RM || !window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
-    let x = -100, y = -100, raf = 0;
-    const draw = () => { raf = 0; o.style.transform = 'translate3d(' + (x - 11) + 'px,' + (y - 11) + 'px,0)'; };
-    addEventListener('pointermove', (e) => { x = e.clientX; y = e.clientY; if (!raf) raf = requestAnimationFrame(draw); }, { passive: true });
-    addEventListener('pointerover', (e) => { document.body.classList.toggle('orb-big', !!e.target.closest('a, button, .mt, .cv, summary')); });
-    document.addEventListener('mouseleave', () => { x = -100; y = -100; draw(); });
   }
 
   /* ---------- cases deck ---------- */
@@ -328,7 +306,6 @@
   heroMosaic();
   observers();
   nav();
-  orb();
   deck();
   clocks();
   form();
